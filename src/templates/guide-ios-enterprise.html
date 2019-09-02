@@ -1,0 +1,97 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>APP安装指南 - 订货宝</title>
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+      padding: 0 6%;
+      font-family: 'Microsoft YaHei', Arial, sans-serif
+    }
+
+    .step {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .title {
+      font-size: 24px;
+      font-weight: 500;
+      color: rgba(0, 0, 0, 1);
+      line-height: 33px;
+      padding-top: 30px;
+    }
+
+    .desc {
+      font-size: 16px;
+      font-weight: 400;
+      color: rgba(101, 101, 101, 1);
+      line-height: 24px;
+      text-align: center;
+      padding: 0;
+      margin: 0;
+      padding-top: 26px;
+    }
+
+    .step-column {
+      height: 24px;
+      font-size: 17px;
+      font-weight: 500;
+      color: rgba(0, 0, 0, 1);
+      line-height: 24px;
+      padding: 23px 0;
+    }
+
+    .step-image {}
+
+    .step-image img {
+      width: 100%;
+    }
+
+    .next {
+      height: 48px;
+      border-radius: 3px;
+      border: 1px solid rgba(213, 213, 213, 1);
+      width: 100%;
+      background-color: #FFF;
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(255, 107, 64, 1);
+      line-height: 20px;
+      margin: 40px 0; 
+    }
+  </style>
+</head>
+
+<body>
+  <div class="step">
+    <div class="title">APP安装指南</div>
+    <p class="desc">请在正式安装前，先看安装指南，依照指南提示安装APP</p>
+    <div class="step-column">第一步：下载安装</div>
+    <div class="step-image"><img src="../img/guide-ios-enterprise-01.png" alt="APP安装指南 - 订货宝"></div>
+  </div>
+  <div class="step">
+    <div class="step-column">第二步：进入开发者授信</div>
+    <div class="step-image"><img src="../img/guide-ios-enterprise-02.png" alt="APP安装指南 - 订货宝"></div>
+    <div class="step-image"><img src="../img/guide-ios-enterprise-03.png" alt="APP安装指南 - 订货宝"></div>
+  </div>
+  <div class="step">
+    <div class="step-column">第三步：完成开发者授信</div>
+    <div class="step-image"><img src="../img/guide-ios-enterprise-04.png" alt="APP安装指南 - 订货宝"></div>
+    <div class="step-image"><img src="../img/guide-ios-enterprise-06.png" alt="APP安装指南 - 订货宝"></div>
+    <button id="install" class="next">开始安装</button>
+  </div>
+</body>
+<script type="text/javascript">
+var enterprise = new URL(window.location.href);
+document.querySelector("#install").addEventListener('click', function(){
+  window.location.href = `itms-services://?action=download-manifest&url=https://dhb-apk.oss-cn-hangzhou.aliyuncs.com/app/${enterprise.searchParams.get('a') && enterprise.searchParams.get('a').split('.')[0]}/manifest.plist`;
+})
+</script>
+</html>

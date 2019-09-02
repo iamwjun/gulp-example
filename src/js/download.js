@@ -1,3 +1,4 @@
+/*! download.js | (c)订货宝 2019, 2019 | cddxwujun@qq.com */
 'use strict';
 
 (function (global, factory) {
@@ -5,7 +6,7 @@
     typeof define === 'function' && define.amd ? define(factory) :
       (global.download = factory());
 }(this, (function () {
-  'use strict';
+  'use strict';4
 
   /**
    * 获取客户端userAgent
@@ -43,7 +44,8 @@
   let downloadUrl = {
     android: `https://mobcdn.dhb168.com/app/${urlParameter.a}/${urlParameter.a}.apk`,
     ios: `https://itunes.apple.com/us/app/ding-huo-bao-3.0/${urlParameter.i}?l=zh&ls=1&mt=8`,
-    enterprise: `itms-services://?action=download-manifest&url=https://dhb-apk.oss-cn-hangzhou.aliyuncs.com/app/${urlParameter.a && urlParameter.a.split('.')[0]}/manifest.plist`
+    enterprise: `guide-ios-enterprise.html?a=${urlParameter.a}`
+    //enterprise: `itms-services://?action=download-manifest&url=https://dhb-apk.oss-cn-hangzhou.aliyuncs.com/app/${urlParameter.a && urlParameter.a.split('.')[0]}/manifest.plist`
   }
 
   /**

@@ -4,6 +4,7 @@ const uglify = require('gulp-uglify');
 const rename = require('gulp-rename');
 var del = require('del');
 var vinylPaths = require('vinyl-paths');
+const htmlmin = require('gulp-htmlmin');
 
 function clearBuildFile() {
 	return src('dist/*')
@@ -13,6 +14,7 @@ function clearBuildFile() {
 
 function html() {
 	return src('src/templates/*.html')
+		.pipe(htmlmin({ removeComments: true, collapseWhitespace: true, minifyJS: true, minifyCSS: true }))
 		.pipe(dest('dist/html'))
 }
 
